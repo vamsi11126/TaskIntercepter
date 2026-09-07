@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Overlay brief-screen background: fully opaque, very dark, with a subtle
+     top-to-bottom lift so it reads as a designed surface, not a black box.
+     (Was #F7-alpha during Phase 1 to visually judge the overlay-vs-app
+     timing race — that diagnostic purpose is done; target app content must
+     not bleed through.) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:angle="270"
+        android:startColor="#FF1C1B22"
+        android:endColor="#FF0F0F13" />
+</shape>

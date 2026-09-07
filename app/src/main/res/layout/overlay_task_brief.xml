@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/overlay_background"
+    android:padding="32dp">
+
+    <!-- Quiet context line above the tasks — sets up why the screen appeared. -->
+    <TextView
+        android:id="@+id/overlay_context_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You planned to:"
+        android:textColor="#99FFFFFF"
+        android:textSize="15sp"
+        android:letterSpacing="0.03"
+        android:gravity="center" />
+
+    <!-- Top three active tasks, decreasing visual weight down the list.
+         Row visibility is managed in code: unused rows are GONE, and with
+         zero tasks all three collapse and row 1's text becomes the
+         empty-state fallback. Each row: colored priority dot + title. -->
+
+    <LinearLayout
+        android:id="@+id/overlay_task_row_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/overlay_task_dot_1"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/overlay_priority_dot"
+            android:importantForAccessibility="no" />
+
+        <TextView
+            android:id="@+id/overlay_task_text_1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Your task will appear here"
+            android:textColor="#FFFFFFFF"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:lineSpacingMultiplier="1.15" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/overlay_task_row_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/overlay_task_dot_2"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/overlay_priority_dot"
+            android:importantForAccessibility="no" />
+
+        <TextView
+            android:id="@+id/overlay_task_text_2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="#CCFFFFFF"
+            android:textSize="19sp"
+            android:lineSpacingMultiplier="1.1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/overlay_task_row_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/overlay_task_dot_3"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/overlay_priority_dot"
+            android:importantForAccessibility="no" />
+
+        <TextView
+            android:id="@+id/overlay_task_text_3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="#99FFFFFF"
+            android:textSize="16sp"
+            android:lineSpacingMultiplier="1.1" />
+    </LinearLayout>
+
+    <!-- Countdown: a pacing cue only. Nothing happens at zero. -->
+    <TextView
+        android:id="@+id/overlay_countdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="10"
+        android:textColor="#66FFFFFF"
+        android:textSize="18sp"
+        android:fontFamily="monospace"
+        android:gravity="center" />
+
+    <Button
+        android:id="@+id/overlay_return_button"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/overlay_button_primary"
+        android:text="Return to Task"
+        android:textColor="#FF17171C"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/overlay_continue_button"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/overlay_button_secondary"
+        android:text="Continue anyway"
+        android:textColor="#80FFFFFF"
+        android:textSize="14sp"
+        android:textAllCaps="false" />
+
+</LinearLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Priority indicator dot for overlay task rows. Drawn white; the real
+     per-priority color is applied in code via backgroundTintList. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="#FFFFFFFF" />
+    <size android:width="10dp" android:height="10dp" />
+</shape>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- canRetrieveWindowContent must stay false — standing privacy constraint
+     (window-state events only, never screen content). See CLAUDE.md.
+
+     packageNames deliberately absent (was Instagram+YouTube): the de-dup
+     logic needs to observe the user LEAVING a monitored app, which means
+     receiving window-state events from all packages. Filtering to monitored
+     packages happens in TaskInterceptAccessibilityService against the
+     user-configurable DataStore set (SettingsPrefs.monitoredPackages,
+     default Instagram+YouTube) — keep that as the single source of truth. -->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeWindowStateChanged"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:notificationTimeout="0"
+    android:canRetrieveWindowContent="false"
+    android:description="@string/accessibility_service_description" />
