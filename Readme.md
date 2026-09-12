@@ -115,5 +115,4 @@ better.
 
 ## License
 
-*(add whichever license you want here — MIT is a common simple choice if
-you're not sure)*
+MIT — see [`LICENSE`](./LICENSE).

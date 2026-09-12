@@ -1,0 +1,35 @@
+TaskIntercept catches you at the exact moment you open Instagram or YouTube,
+and shows you what you planned to do first — before the app's own interface
+even loads.
+
+Nothing is blocked. It just makes an automatic habit into a conscious choice
+again.
+
+FEATURES
+
+* Set what you're planning to do, with a priority (High / Medium / Low) —
+  track more than one thing at a time
+* Opening a monitored app shows a brief overlay with your top task(s) before
+  the app itself is visible
+* A 10-second pacing countdown — nothing forced happens at zero, you always
+  make the real choice
+* "Return to Task" sends you home, or "Continue Anyway" lets the app
+  through — no shame, no lockout
+* Choose which apps get monitored (Instagram and YouTube by default),
+  adjust the overlay's duration, or pause interception entirely with a
+  master switch
+
+PERMISSIONS, HONESTLY
+
+* Accessibility Service: the only way for an Android app to detect when
+  another app opens, before its UI loads. TaskIntercept reads window-state
+  change events only — which app just came to the foreground — and never
+  reads screen content.
+* Display over other apps: needed to draw the brief overlay on top of the
+  app you just opened.
+* Ignore battery optimizations (optional): some manufacturers aggressively
+  kill background accessibility services; this exemption helps
+  TaskIntercept keep working reliably.
+
+All task data stays on your device. Nothing is sent anywhere, ever. No
+analytics, no ads, no third-party SDKs. Full detail in the app's PRIVACY.md.
